@@ -1,129 +1,147 @@
-# 📊 Análise Preditiva de Churn para a Telecom X
+# 📊 Predictive Churn Analysis for Telecom X
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://jupyter.org/)
-[![Status](https://img.shields.io/badge/status-Concluído-brightgreen)]()
+[![Status](https://img.shields.io/badge/status-Completed-brightgreen)]()
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ---
 
-## 📚 Sumário
+## 📚 Summary
 
-- [Visão Geral do Projeto](#visão-geral-do-projeto)
-- [Estrutura do Repositório](#estrutura-do-repositório)
-- [Metodologia Aplicada](#metodologia-aplicada)
-- [Fatores-Chave de Churn](#fatores-chave-de-churn)
-- [Como Executar o Notebook](#como-executar-o-notebook)
-- [Recomendações Estratégicas](#recomendações-estratégicas)
-- [Conclusão](#conclusão)
-
----
-
-## 🚀 Visão Geral do Projeto
-
-Este repositório contém a solução completa para o **Challenge de Machine Learning da Alura em parceria com a Oracle (ONE)**. O desafio consistiu em desenvolver um sistema de previsão de evasão de clientes (churn) para a **Telecom X**, uma empresa fictícia do setor de telecomunicações.
-
-O projeto abrange todo o ciclo de vida de um projeto de Machine Learning, desde a análise e preparação dos dados até o treinamento, avaliação de modelos e a criação de um pipeline de inferência. O resultado é um modelo preditivo robusto, com **acurácia de 79%**, capaz de identificar clientes com alta probabilidade de cancelamento, fornecendo à empresa uma ferramenta estratégica para campanhas de retenção.
+- [Project Overview](#project-overview)
+- [Repository Structure](#repository-structure)
+- [Applied Methodology](#applied-methodology)
+- [Key Churn Factors](#key-churn-factors)
+- [How to Run the Notebook](#how-to-run-the-notebook)
+- [Strategic Recommendations](#strategic-recommendations)
+- [Conclusion](#conclusion)
 
 ---
 
-## 🗂️ Estrutura do Repositório
+## 🚀 Project Overview
+
+This repository contains the complete solution for the **Alura Machine Learning Challenge in partnership with Oracle (ONE)**. The challenge consisted of developing a customer churn prediction system for **Telecom X**, a fictitious company in the telecommunications sector.
+
+The project covers the entire lifecycle of a Machine Learning project, from data analysis and preparation to training, model evaluation, and the creation of an inference pipeline. The result is a robust predictive model with **79% accuracy**, capable of identifying customers with a high probability of cancellation, providing the company with a strategic tool for retention campaigns.
+
+---
+
+## 🗂️ Repository Structure
 
 ```text
 /TelecomX_BR_2
 │
 ├── data/
-│   ├── TelecomX_Data.json        # Dados brutos fornecidos no desafio
-│   └── telecom_data_tratado.csv  # Dados processados
+│ ├── TelecomX_Data.json # Raw data provided in the challenge
+│ └── telecom_data_tratado.csv # Processed data
 │
 ├── notebooks/
-│   └── TelecomX_BR_2_Completo.ipynb # Notebook original com EDA e desenvolvimento
+│ └── TelecomX_BR_2_Completo.ipynb # Original notebook with EDA and development
 │
-└── README.md                     # Documentação do projeto
+└── README.md # Project documentation
+
 ```
 
 ---
 
-## 🧠 Metodologia Aplicada
+## 🧠 Applied Methodology
 
-O desenvolvimento seguiu uma abordagem estruturada, dividida em quatro etapas principais:
+The development followed a structured approach, divided into four main stages:
 
-1. **Preparação dos Dados**  
-   - Carga dos dados em JSON  
-   - Limpeza de inconsistências, correção de tipos e remoção de registros incompletos
+1. **Data Preparation**
 
-2. **Engenharia de Features**  
-   - Conversão de variáveis categóricas via **One-Hot Encoding**
-   - Normalização de variáveis numéricas com **StandardScaler**
+- Loading the JSON Data
 
-3. **Treinamento e Avaliação**  
-   - Modelos: **Regressão Logística** (baseline) e **Random Forest** (final)
-   - Avaliação: acurácia, precision, recall, F1-score e matriz de confusão
+- Cleaning inconsistencies, correcting types, and removing incomplete records
 
-4. **Construção do Pipeline**  
-   - Pipeline do Scikit-learn integrando pré-processamento e modelo
-   - Pronto para uso em produção e predições em tempo real
+2. **Feature Engineering**
 
----
+- Conversion of categorical variables via **One-Hot Encoding**
 
-## 🔑 Fatores-Chave de Churn
+- Normalization of numerical variables with **StandardScaler**
 
-A análise de importância de features revelou os principais indicadores de churn:
+3. **Training and Evaluation**
 
-- **Tipo de Contrato (`Contract`)**: Contratos mensais são o principal fator de risco.
-- **Tempo de Contrato (`tenure`)**: Clientes com baixo tempo de casa têm maior probabilidade de churn.
-- **Serviço de Internet (`InternetService_Fiber optic`)**: Fibra ótica está associada a churn mais alto, sugerindo possíveis problemas de expectativa vs. realidade.
+- Models: **Logistic Regression** (baseline) and **Random Forest** (final)
+
+- Evaluation: accuracy, precision, recall, F1-score, and confusion matrix
+
+4. **Pipeline Construction**
+
+- Scikit-learn pipeline integrating preprocessing and model
+
+- Ready for production use and real-time predictions
 
 ---
 
-## 💻 Como Executar o Notebook
+## 🔑 Key Churn Factors
 
-### ⚙️ Pré-requisitos
+Feature importance analysis revealed the main churn indicators:
 
-- Python 3.8 ou superior
-- Jupyter Notebook ou JupyterLab
-- Instale as dependências:
-  
-  ```bash
-  pip install pandas scikit-learn matplotlib seaborn joblib
-  ```
+- **Contract Type:** Monthly contracts are the main risk factor.
 
-### ▶️ Execução
+- **Contract Tenure:** Customers with short tenure periods are more likely to churn.
 
-1. Abra o arquivo [`notebooks/TelecomX_BR_2_Completo.ipynb`](notebooks/TelecomX_BR_2_Completo.ipynb) no Jupyter Notebook ou JupyterLab.
-2. Execute as células sequencialmente para reproduzir toda a análise, desde a preparação dos dados até a geração dos insights e recomendações.
-
-> 💡 **Dica:** Você pode executar o notebook online pelo [Google Colab](https://colab.research.google.com/) arrastando o arquivo `.ipynb` para a plataforma.
+- **Internet Service (Fiber optic):** Fiber optics is associated with higher churn, suggesting potential expectation vs. reality issues.
 
 ---
 
-## 💡 Recomendações Estratégicas
+## 💻 How to Run the Notebook
 
-Os insights do modelo permitem à Telecom X adotar uma postura proativa na retenção de clientes:
+### ⚙️ Prerequisites
 
-- 🎯 **Foco em Contratos de Longo Prazo**: Incentivar a migração de clientes de planos mensais para contratos anuais ou bianuais, oferecendo benefícios claros.
-- 🤝 **Programa de Onboarding para Novos Clientes**: Criar uma jornada de boas-vindas para garantir uma experiência positiva nos primeiros meses.
-- 🔍 **Análise da Oferta de Fibra Ótica**: Investigar as causas da alta taxa de churn entre clientes de fibra, avaliando preços, qualidade e suporte.
+- Python 3.8 or higher
+- Jupyter Notebook or JupyterLab
+
+- Install the dependencies:
+
+``bash
+pip install pandas scikit-learn matplotlib seaborn joblib
+
+``
+
+### ▶️ Execution
+
+1. Open the file [`notebooks/TelecomX_BR_2_Completo.ipynb`](notebooks/TelecomX_BR_2_Completo.ipynb) in Jupyter Notebook or JupyterLab.
+
+2. Run the cells sequentially to reproduce the entire analysis, from data preparation to generating insights and recommendations.
+
+> 💡 **Tip:** You can run the notebook online via [Google Colab](https://colab.research.google.com/) by dragging the `.ipynb` file to the platform.
 
 ---
 
-## 🏁 Conclusão
+## 💡 Strategic Recommendations
 
-Este projeto entrega não apenas um modelo de Machine Learning, mas uma solução de ponta a ponta que traduz dados brutos em inteligência de negócio.  
-A capacidade de prever o churn com alta precisão permite que a Telecom X direcione seus recursos de forma mais eficiente, maximize a retenção de clientes e aumente sua receita e competitividade no mercado.
+The model's insights allow Telecom X to adopt a proactive stance in customer retention:
+
+- 🎯 **Focus on Long-Term Contracts**: Encourage customers to migrate from monthly plans to annual or biannual contracts by offering clear benefits.
+
+- 🤝 **Onboarding Program for New Customers**: Create a welcoming journey to ensure a positive experience in the first few months.
+
+- 🔍 **Fiber Optic Offer Analysis**: Investigate the causes of high churn rates among fiber customers, evaluating pricing, quality, and support.
 
 ---
 
-## 📬 Contato
+## 🏁 Conclusion
 
-Dúvidas ou sugestões? Abra uma [issue](https://github.com/CidQueiroz/Machine_learning_alura/issues) ou entre em contato!
+This project delivers not just a Machine Learning model, but an end-to-end solution that translates raw data into business intelligence.
 
-- [![LinkedIn](https://img.shields.io/badge/LinkedIn-ciddy--queiroz-blue?logo=linkedin)](https://www.linkedin.com/in/ciddy-queiroz/)
+The ability to predict churn with high accuracy allows Telecom X to allocate its resources more efficiently, maximize customer retention, and increase its revenue and market competitiveness.
+
+---
+
+## 📬 Contact
+
+Questions or suggestions? Open an issue at [https://github.com/CidQueiroz/Machine_learning_alura/issues] or get in touch!
+
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-ciddy--queiroz-blue?logo=linkedin)](hthttps://www.linkedin.com/in/ciddy-queiroz/)
 
 - [![Email](https://img.shields.io/badge/Email-cydy.queiroz@gmail.com-red?style=flat-square&logo=gmail&logoColor=white)](mailto:cydy.queiroz@gmail.com)
 
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/feito%20com-❤%20por%20Queiroz-blue" alt="Feito com amor por ONE e Alura"/>
+
+<img src="https://img.shields.io/badge/feito%20com-❤%20por%20Queiroz-blue" alt="Made with love by ONE and Alura"/>
 </p>
