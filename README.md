@@ -26,9 +26,7 @@ This repository contains the complete solution for the **Alura Machine Learning 
 The project covers the entire lifecycle of a Machine Learning project, from data analysis and preparation to training, model evaluation, and the creation of an inference pipeline. The result is a robust predictive model with **79% accuracy**, capable of identifying customers with a high probability of cancellation, providing the company with a strategic tool for retention campaigns.
 
 ---
-
-Veja também: - [Project ETL_ONE]([#project-overview](https://github.com/CidQueiroz/etl_one))
-
+Veja também: - [![Project ETL_ONE](https://github.com/CidQueiroz/etl_one)](https://github.com/CidQueiroz/etl_one)
 ---
 
 ## 🗂️ Repository Structure
