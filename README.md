@@ -27,6 +27,10 @@ The project covers the entire lifecycle of a Machine Learning project, from data
 
 ---
 
+Veja também: - [Project ETL_ONE]([#project-overview](https://github.com/CidQueiroz/etl_one))
+
+---
+
 ## 🗂️ Repository Structure
 
 ```text
